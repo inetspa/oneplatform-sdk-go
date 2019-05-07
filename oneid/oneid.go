@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/inetspa/oneplatform-sdk-go/requests"
 	"net/http"
-	"oneplatform/requests"
 )
 
 type Api struct {

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"oneplatform/requests"
+	"github.com/inetspa/oneplatform-sdk-go/requests"
 )
 
 func checkError(resp requests.Response, err error) error {
