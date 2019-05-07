@@ -13,7 +13,7 @@ This library requires Go 1.10 or later.
 ## การติดตั้ง
 
 ```sh
-$ go get github.com/inetspa/oneplatform-sdk-go
+$ go get github.com/inetspa/oneplatform-sdk-go/...
 ```
 
 ## ตัวอย่างการใช้งาน
