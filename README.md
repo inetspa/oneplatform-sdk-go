@@ -45,26 +45,26 @@ func main() {
 
 #### Login (OAuth2 - Password Grant)
 ```go
-	r, err := id.Login("_USERNAME_", "_PASSWORD_")
-    if err != nil {
-    	// Do something when login failed.
-    }
+r, err := id.Login("_USERNAME_", "_PASSWORD_")
+if err != nil {
+    // Do something when login failed.
+}
 ```
 
 ### Refresh Token
 ```go
-	c, err := id.RefreshNewToken(r.RefreshToken)
-    if err != nil {
-    	// Do something when refresh failed.
-    }
+c, err := id.RefreshNewToken(r.RefreshToken)
+if err != nil {
+    // Do something when refresh failed.
+}
 ```
 
 ### Verify authorization code (OAuth2 - Authorization code)
 ```go
-	r, err := id.VerifyAuthorizationCode("_AUTHORIZATION_CODE_", "_REDIRECT_URL_")
-    if err != nil {
-    	// Do something when verify code failed.
-    }
+r, err := id.VerifyAuthorizationCode("_AUTHORIZATION_CODE_", "_REDIRECT_URL_")
+if err != nil {
+    // Do something when verify code failed.
+}
 ```
 
 #### Authentication result structure
@@ -85,20 +85,20 @@ type AuthenticationResult struct {
 
 ### Get account profile
 ```go
-	p, err := id.GetProfile(r.TokenType, r.AccessToken)
-    if err != nil {
-    	// Do something when cannot get account profile.
-    }
+p, err := id.GetProfile(r.TokenType, r.AccessToken)
+if err != nil {
+    // Do something when cannot get account profile.
+}
 ```
 
 ### Generate login link
 ```go
-	url := id.GetLoginUrl()
+url := id.GetLoginUrl()
 ```
 
 ### Redirect to login url
 ```go
-	id.RedirectToLoginUrl(w, r)
+id.RedirectToLoginUrl(w, r)
 ```
 
 ## Changelog
