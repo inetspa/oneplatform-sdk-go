@@ -109,7 +109,7 @@ func (api *Api) RefreshNewToken(refreshToken string) (AuthenticationResult, erro
 	return result, err
 }
 
-func (api *Api) VerifyAuthorizationCode(code string, redirectUrl string) (AuthenticationResult, error) {
+func (api *Api) VerifyAuthorizationCode(code string) (AuthenticationResult, error) {
 	var result AuthenticationResult
 	if code == "" {
 		return result, errors.New("authorization code required")
@@ -119,14 +119,12 @@ func (api *Api) VerifyAuthorizationCode(code string, redirectUrl string) (Authen
 		GrantType    string `json:"grant_type"`
 		ClientID     string `json:"client_id"`
 		ClientSecret string `json:"client_secret"`
-		RedirectUrl  string `json:"redirect_url"`
 		Code         string `json:"code"`
 		Scope        string `json:"scope"`
 	}{
 		GrantType:    grantTypeCode,
 		ClientID:     api.clientID,
 		ClientSecret: api.clientSecret,
-		RedirectUrl:  redirectUrl,
 		Code:         code,
 		Scope:        "",
 	})
