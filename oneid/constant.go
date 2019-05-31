@@ -16,6 +16,6 @@ const (
 	// Information
 	userAgent             = "oneplatform-sdk-go/%s"
 	grantTypePassword     = "password"
-	grantTypeCode         = "code"
+	grantTypeCode         = "authorization_code"
 	grantTypeRefreshToken = "refresh_token"
 )
