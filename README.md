@@ -61,7 +61,7 @@ if err != nil {
 
 ### Verify authorization code (OAuth2 - Authorization code)
 ```go
-r, err := id.VerifyAuthorizationCode("_AUTHORIZATION_CODE_", "_REDIRECT_URL_")
+r, err := id.VerifyAuthorizationCode("_AUTHORIZATION_CODE_")
 if err != nil {
     // Do something when verify code failed.
 }
@@ -102,6 +102,11 @@ id.RedirectToLoginUrl(w, r)
 ```
 
 ## Changelog
+
+### Version 0.1.2 (2019-05-31)
+
+* Bug fixed
+    * Fixed verify authorization code error
 
 ### Version 0.1.0 (2019-05-07)
 
