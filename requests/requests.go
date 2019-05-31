@@ -37,13 +37,13 @@ func Request(method string, url string, headers map[string]string, body io.Reade
 	}
 
 	buf := new(bytes.Buffer)
-	buf.ReadFrom(resp.Body)
+	_, _ = buf.ReadFrom(resp.Body)
 
 	r.Code = resp.StatusCode
 	r.Status = resp.Status
 	r.Body = buf.Bytes()
 	r.Header = resp.Header
-	resp.Body.Close()
+	_ = resp.Body.Close()
 
 	return r, nil
 }
