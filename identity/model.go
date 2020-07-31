@@ -1,4 +1,16 @@
-package oneid
+package identity
+
+import uuid "github.com/satori/go.uuid"
+
+// Identity model struct
+type Identity struct {
+	apiEndpoint  string
+	clientId     string
+	clientSecret string
+	refCode      string
+	callbackUrl  string
+	headers      map[string]string
+}
 
 // Authentication result model
 type AuthenticationResult struct {
@@ -46,6 +58,7 @@ type AccountProfile struct {
 	AccountAttr        []string        `json:"account_attribute"`
 	Status             string          `json:"status"`
 	LastUpdate         string          `json:"last_update"`
+	Employee           *Employee       `json:"has_employee_detail"`
 }
 
 type AccountMobile struct {
@@ -90,4 +103,16 @@ type AccountEmailPivot struct {
 	PrimaryFlag string `json:"primary_flg"`
 	ConfirmFlag string `json:"email_confirm_flg"`
 	ConfirmDate string `json:"email_confirm_dt"`
+}
+
+type Employee struct {
+	Id         uuid.UUID       `json:"id"`
+	AccountId  string          `json:"account_id"`
+	BizId      string          `json:"biz_id"`
+	Email      string          `json:"email"`
+	EmployeeId string          `json:"employee_id"`
+	Account    *AccountProfile `json:"account"`
+	Employee   *Employee       `json:"employee"`
+	Position   string          `json:"position"`
+	PositionId uuid.UUID       `json:"role_id"`
 }

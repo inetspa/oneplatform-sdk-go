@@ -1,6 +1,6 @@
 # OnePlatform API SDK for Go
 
-![OnePlatform Mascot](https://monitor.sdi.one.th/imagik/bj612eatpnstbpk7nhsg)
+![OnePlatform Mascot](https://one.th/img/img/landing/notebook.png)
 
 ## เกี่ยวกับ OnePlatform API
 
@@ -102,6 +102,12 @@ id.RedirectToLoginUrl(w, r)
 ```
 
 ## Changelog
+
+### Version 0.1.3 (2020-07-31)
+* Bug fixed
+    * Fixed requests lib to golib
+    * Add OneChat Platform
+    * Add Organize Platform
 
 ### Version 0.1.2 (2019-05-31)
 
